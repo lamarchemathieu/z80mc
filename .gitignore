@@ -9,3 +9,4 @@
 *.map
 *.noi
 *.asm
+.clang_complete
