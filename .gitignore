@@ -6,7 +6,6 @@
 *.ihx
 *.map
 *.lk
-*.map
 *.noi
 *.asm
 .clang_complete
