@@ -1,7 +1,7 @@
 	.module crt0
 	.globl	_main
 	.globl _irq_vec
-	INT_VEC .equ 0xFFCE
+	INT_VEC .equ 0xFFCE ;From ZMCv15.asm line 7331
 	STACK .equ 0xFF80
 	.area	_HEADER (ABS)
 
@@ -10,7 +10,7 @@ init:
 	di
 	im 1
 	ld hl,#irq
-	ld (#INT_VEC),hl
+	ld (#INT_VEC),hl ;Register custom INT vector
 	ei
 	call	gsinit
 	ld sp, #STACK
@@ -18,6 +18,7 @@ init:
 	ret
 
 irq:
+;Code from ZMCv15.asm
 ;ex af,af'
 ;exx
 ;ld hl,(#INT_VEC)
